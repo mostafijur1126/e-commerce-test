@@ -4,6 +4,7 @@ import "./tracking.css";
 const TrackingPage = () => {
     return (
         <div>
+            <title>Tracking</title>
             <div className="header">
                 <div className="left-section">
                     <a href="/" className="header-link">
