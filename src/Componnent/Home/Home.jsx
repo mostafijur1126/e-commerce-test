@@ -7,7 +7,7 @@ const Home = () => {
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([]);
     useEffect(() => {
-        axios.get('http://localhost:3000/api/products')
+        axios.get('/api/products')
         .then((res) =>{
            setProducts(res.data);
         })
@@ -15,7 +15,7 @@ const Home = () => {
     },[]);
 
     useEffect(()=> {
-        axios.get('http://localhost:3000/api/cart-items')
+        axios.get('/api/cart-items')
         .then((res) =>{
             setCart(res.data);
         })
