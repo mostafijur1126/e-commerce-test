@@ -2,9 +2,15 @@ import React from 'react';
 import './HomePage.css'
 import Header from '../Header/Header';
 import {products} from '../../data/products';
-console.log(products);
+import { data } from 'react-router';
+// console.log(products);
 const Home = () => {
-
+    fetch('http://localhost:3000/api/products')
+    .then((res) =>{
+        return res.json();
+    }).then((data) =>{
+        console.log(data);
+    })
 
     return (
         <div>
