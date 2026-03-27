@@ -77,7 +77,7 @@ const Home = () => {
                                     </div>
 
                                     <button className="add-to-cart-button button-primary">
-                                        Add to Cart
+                                        Add to Cart.
                                     </button>
                                 </div>
                             )
