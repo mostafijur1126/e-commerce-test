@@ -1,15 +1,13 @@
 import React from 'react';
+import axios from 'axios'
 import './HomePage.css'
 import Header from '../Header/Header';
 import {products} from '../../data/products';
-import { data } from 'react-router';
 // console.log(products);
 const Home = () => {
-    fetch('http://localhost:3000/api/products')
+    axios.get('http://localhost:3000/api/products')
     .then((res) =>{
-        return res.json();
-    }).then((data) =>{
-        console.log(data);
+       console.log(res.data);
     })
 
     return (
