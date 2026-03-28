@@ -2,19 +2,20 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import './HomePage.css'
 import Header from '../Header/Header';
+import { PriceSet } from '../Utility/Utility'
 // console.log(products);
-const Home = ({cart}) => {
+const Home = ({ cart }) => {
     const [products, setProducts] = useState([]);
-  
+
     useEffect(() => {
         axios.get('/api/products')
-        .then((res) =>{
-           setProducts(res.data);
-        })
+            .then((res) => {
+                setProducts(res.data);
+            })
 
-    },[]);
+    }, []);
 
-    
+
 
     return (
         <div>
@@ -26,6 +27,7 @@ const Home = ({cart}) => {
 
                     {
                         products.map((product) => {
+                            console.log(product);
                             return (
                                 <div key={product.id} className="product-container">
                                     <div className="product-image-container">
@@ -46,7 +48,7 @@ const Home = ({cart}) => {
                                     </div>
 
                                     <div className="product-price">
-                                        ${(product.priceCents / 100).toFixed(2)}
+                                        {PriceSet(product.priceCents ?? 0)}
                                     </div>
 
                                     <div className="product-quantity-container">
