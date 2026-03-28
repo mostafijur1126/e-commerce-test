@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './header.css';
-const Header = ({cart}) => {
-    console.log(cart);
+const Header = ({cart = []}) => {
+    // console.log(cart);
     let totalQuantity = 0;
     cart.forEach(CartItem => {
         totalQuantity += CartItem.quantity;
